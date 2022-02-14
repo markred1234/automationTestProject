@@ -15,8 +15,8 @@ public class BaseClass {
     public String password;
 
     @BeforeTest(alwaysRun = true)
-    @Parameters({"appurl"})
-    public void setUp(String _appurl) throws InterruptedException {
+    @Parameters({"appurl","isHeadless"})
+    public void setUp(String _appurl,String isHeadless) throws InterruptedException {
 
         //Get current working directory and load the data file
         workingDir = System.getProperty("user.dir");
@@ -28,8 +28,11 @@ public class BaseClass {
 
         ChromeOptions options = new ChromeOptions();
 
+        if(isHeadless.equals("true")){
+            options.addArguments("--headless");
+        }
+
         options.addArguments("--start-maximized");
-        options.addArguments("--headless");
         System.out.println("Operating System:" + System.getProperty("os.name"));
         System.setProperty("webdriver.chrome.driver", "WebDrivers/chromedriver.exe");
         System.out.println("******************************************");
@@ -39,7 +42,6 @@ public class BaseClass {
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
-        driver.manage().window().maximize();
 
         appurl = _appurl;
 
