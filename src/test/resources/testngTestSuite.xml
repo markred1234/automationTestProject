@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Online Shopping Test Suite">
+
+    <parameter name="appurl" value="http://automationpractice.com/index.php"/>
+
+    <test name="Search For Item - Test Case 1">
+        <classes>
+            <class name="Tests.SearchForItem"/>
+        </classes>
+    </test> <!-- Test -->
+
+    <test name="Search For Items - Test Case 2">
+        <classes>
+            <class name="Tests.SearchForItems"/>
+        </classes>
+    </test> <!-- Test -->
+
+    <test name="Search For Items - Test Case 3">
+        <classes>
+            <class name="Tests.SearchForItemsDataDriven"/>
+        </classes>
+    </test> <!-- Test -->
+
+    <test name="Sign Into Account - Test Case 4">
+        <classes>
+            <class name="Tests.SignInToAccount"/>
+        </classes>
+    </test> <!-- Test -->
+
+
+</suite> <!-- Suite -->
+
+
+
