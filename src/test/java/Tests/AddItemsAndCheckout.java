@@ -18,7 +18,7 @@ public class AddItemsAndCheckout extends BaseClass {
 
 
     @Test
-    public void SignIntoAccount() {
+    public void AddItemsandPerformCheckout() {
 
         objSignInPage = new SignInPage(driver);
         objHomePage = new HomePage(driver);
@@ -49,12 +49,13 @@ public class AddItemsAndCheckout extends BaseClass {
         objProccedToCheckOutPage.confirmCheckoutPagePopup();
 
         //Performs a calculation based on sum of shipping, quantity and product value
-        calculation.CalculateTotal(objProccedToCheckOutPage.shippingTotal(),objAddtoCartPage.oneItemPrice(),objProccedToCheckOutPage.goodsTotal(),productQuantity);
+        calculation.CalculateTotal(objProccedToCheckOutPage.shippingTotal(), objAddtoCartPage.oneItemPrice(), objProccedToCheckOutPage.goodsTotal(), productQuantity);
 
         objProccedToCheckOutPage.clickProceedToCheckout();
         objProccedToCheckOutPage.confirmCheckOutPage();
 
-        calculation.CalculateTotal(objConfirmOrderPage.totalShippingPrice(),objConfirmOrderPage.priceofProduct(),objConfirmOrderPage.totalOrderPrice(),productQuantity);
+        //Performs a calculation based on sum of shipping, quantity and product value
+        calculation.CalculateTotal(objConfirmOrderPage.totalShippingPrice(), objConfirmOrderPage.priceofProduct(), objConfirmOrderPage.totalOrderPrice(), productQuantity);
 
 
     }
