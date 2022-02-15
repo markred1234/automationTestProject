@@ -5,6 +5,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.*;
 
+import java.util.concurrent.TimeUnit;
+
 public class BaseClass {
 
     protected static WebDriver driver;
@@ -13,6 +15,8 @@ public class BaseClass {
     String workingDir;
     public String userName;
     public String password;
+    public String item;
+    public String quantity;
 
     @BeforeTest(alwaysRun = true)
     @Parameters({"appurl","isHeadless"})
@@ -23,6 +27,9 @@ public class BaseClass {
         datafile = new UIMap(workingDir + "/src/test/resources/datafile.properties");
         userName = datafile.getData("userName");
         password = datafile.getData("password");
+        item = datafile.getData("itemstoAdd");
+        quantity = datafile.getData("quantity");
+
 
         //Chrome Options
 
@@ -44,7 +51,6 @@ public class BaseClass {
         }
 
         appurl = _appurl;
-
         driver.navigate().to(appurl);
 
 

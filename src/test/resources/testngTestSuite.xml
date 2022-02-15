@@ -6,29 +6,37 @@
     <parameter name="isHeadless" value="false"/>
 
 
-    <test name="Search For Item - Test Case 1">
+<!--    <test name="Search For Item - Test Case 1">-->
+<!--        <classes>-->
+<!--            <class name="Tests.SearchForItem"/>-->
+<!--        </classes>-->
+<!--    </test> &lt;!&ndash; Test &ndash;&gt;-->
+
+<!--    <test name="Search For Items - Test Case 2">-->
+<!--        <classes>-->
+<!--            <class name="Tests.SearchForItems"/>-->
+<!--        </classes>-->
+<!--    </test> &lt;!&ndash; Test &ndash;&gt;-->
+
+<!--    <test name="Search For Items - Test Case 3">-->
+<!--        <classes>-->
+<!--            <class name="Tests.SearchForItemsDataDriven"/>-->
+<!--        </classes>-->
+<!--    </test> &lt;!&ndash; Test &ndash;&gt;-->
+
+<!--    <test name="Sign Into Account - Test Case 4">-->
+<!--        <classes>-->
+<!--            <class name="Tests.SignInToAccount"/>-->
+<!--        </classes>-->
+<!--    </test> &lt;!&ndash; Test &ndash;&gt;-->
+
+
+    <test name="Sign Into Account - Test Case 5">
         <classes>
-            <class name="Tests.SearchForItem"/>
+            <class name="Tests.AddItemsAndCheckout"/>
         </classes>
     </test> <!-- Test -->
 
-    <test name="Search For Items - Test Case 2">
-        <classes>
-            <class name="Tests.SearchForItems"/>
-        </classes>
-    </test> <!-- Test -->
-
-    <test name="Search For Items - Test Case 3">
-        <classes>
-            <class name="Tests.SearchForItemsDataDriven"/>
-        </classes>
-    </test> <!-- Test -->
-
-    <test name="Sign Into Account - Test Case 4">
-        <classes>
-            <class name="Tests.SignInToAccount"/>
-        </classes>
-    </test> <!-- Test -->
 
 
 </suite> <!-- Suite -->

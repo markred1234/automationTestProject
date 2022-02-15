@@ -2,6 +2,11 @@ package Pom;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
 
 import static org.testng.Assert.assertEquals;
 
@@ -16,6 +21,15 @@ public class SignInPage {
     public SignInPage(WebDriver driver) {
         this.driver = driver;
     }
+
+    public WebElement waitMethod(By Xpath)
+    {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        WebElement element = wait.until(
+                ExpectedConditions.visibilityOfElementLocated(Xpath));
+        return element;
+    }
+
 
     public void authUsernamePassword(String Username, String Password) {
         driver.findElement(userName).sendKeys(Username);
