@@ -12,17 +12,21 @@ public class AddItemsAndCheckout extends BaseClass {
     SignInPage objSignInPage;
     MyAccountPage objMyAccountPage;
     SearchResultsPage objSearchResultsPage;
+    AddtoCartPage objAddtoCartPage;
     ProceedToCheckOutPage objProccedToCheckOutPage;
+    ConfirmOrderPage objConfirmOrderPage;
 
 
     @Test
-    public void SignIntoAccount() throws InterruptedException {
+    public void SignIntoAccount() {
 
         objSignInPage = new SignInPage(driver);
         objHomePage = new HomePage(driver);
         objMyAccountPage = new MyAccountPage(driver);
         objSearchResultsPage = new SearchResultsPage(driver);
         objProccedToCheckOutPage = new ProceedToCheckOutPage(driver);
+        objAddtoCartPage = new AddtoCartPage(driver);
+        objConfirmOrderPage = new ConfirmOrderPage(driver);
         Calculation calculation = new Calculation();
 
         objHomePage.veryHeader();
@@ -38,16 +42,19 @@ public class AddItemsAndCheckout extends BaseClass {
         objSearchResultsPage.searchResults(item);
 
         objSearchResultsPage.itemClick();
-        objSearchResultsPage.addtoCart();
+        objAddtoCartPage.itemsWanted(productQuantity);
+        objAddtoCartPage.addtoCart();
         objProccedToCheckOutPage.clickCheckout();
 
         objProccedToCheckOutPage.confirmCheckoutPagePopup();
 
-        calculation.CalculateTotal(objProccedToCheckOutPage.productTotalValue(),objProccedToCheckOutPage.shippingTotal(),objProccedToCheckOutPage.goodsTotal());
-        objProccedToCheckOutPage.goodsTotal();
+        //Performs a calculation based on sum of shipping, quantity and product value
+        calculation.CalculateTotal(objProccedToCheckOutPage.shippingTotal(),objAddtoCartPage.oneItemPrice(),objProccedToCheckOutPage.goodsTotal(),productQuantity);
 
         objProccedToCheckOutPage.clickProceedToCheckout();
         objProccedToCheckOutPage.confirmCheckOutPage();
+
+        calculation.CalculateTotal(objConfirmOrderPage.totalShippingPrice(),objConfirmOrderPage.priceofProduct(),objConfirmOrderPage.totalOrderPrice(),productQuantity);
 
 
     }

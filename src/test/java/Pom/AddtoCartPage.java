@@ -3,7 +3,6 @@ package Pom;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -12,14 +11,14 @@ import java.time.Duration;
 import static org.testng.Assert.assertEquals;
 
 
-public class SearchResultsPage {
+public class AddtoCartPage {
 
 
     WebDriver driver;
-    By searchResults = By.xpath("/html/body/div[1]/div[2]/div/div[3]/div[2]/ul/li/div/div[2]/h5/a");
     By addtoCartButton = By.xpath("/html/body/div[1]/div[2]/div/div[3]/div/div/div/div[4]/form/div/div[3]/div[1]/p/button/span");
-    By itemwanted = By.xpath("//*[@id=\"quantity_wanted\"]");
     By itemPrice = By.xpath("//*[@id=\"our_price_display\"]");
+    By itemwanted = By.xpath("//*[@id=\"quantity_wanted\"]");
+
 
     public WebElement waitMethod(By Xpath)
     {
@@ -29,24 +28,14 @@ public class SearchResultsPage {
         return element;
     }
 
-    public SearchResultsPage(WebDriver driver) {
+    public AddtoCartPage(WebDriver driver) {
         this.driver = driver;
 
-    }
-
-    public void searchResults(String searchfor) {
-        assertEquals(searchfor, driver.findElement(searchResults).getText().trim(), "Could not search criteria");
     }
 
     public void itemsWanted(String quantity){
         driver.findElement(itemwanted).clear();
         driver.findElement(itemwanted).sendKeys(quantity);
-    }
-
-    public void itemClick() {
-
-        driver.findElement(searchResults).click();
-
     }
 
     public void addtoCart() {

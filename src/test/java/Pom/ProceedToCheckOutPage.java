@@ -24,6 +24,7 @@ public class ProceedToCheckOutPage {
     By total = By.xpath("/html/body/div/div[1]/header/div[3]/div/div/div[4]/div[1]/div[2]/div[3]/span");
 
 
+
     public ProceedToCheckOutPage(WebDriver driver) {
         this.driver = driver;
 
@@ -57,6 +58,8 @@ public class ProceedToCheckOutPage {
 
         return totalForGoods;
     }
+
+
 
     public void clickCheckout(){
         driver.findElement(checkOutButton).click();

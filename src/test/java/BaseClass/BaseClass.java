@@ -5,7 +5,6 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.*;
 
-import java.util.concurrent.TimeUnit;
 
 public class BaseClass {
 
@@ -16,7 +15,7 @@ public class BaseClass {
     public String userName;
     public String password;
     public String item;
-    public String quantity;
+    public String productQuantity;
 
     @BeforeTest(alwaysRun = true)
     @Parameters({"appurl","isHeadless"})
@@ -25,11 +24,12 @@ public class BaseClass {
         //Get current working directory and load the data file
         workingDir = System.getProperty("user.dir");
         datafile = new UIMap(workingDir + "/src/test/resources/datafile.properties");
+        productQuantity = datafile.getData("productQuantity");
         userName = datafile.getData("userName");
         password = datafile.getData("password");
         item = datafile.getData("itemstoAdd");
-        quantity = datafile.getData("quantity");
 
+        System.out.println("Product Quantity "+ productQuantity);
 
         //Chrome Options
 
