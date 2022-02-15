@@ -1,7 +1,7 @@
 package Tests;
 
 
-import BaseClass.BaseClass;
+import BaseClass.*;
 import Pom.*;
 import org.testng.annotations.Test;
 
@@ -23,6 +23,7 @@ public class AddItemsAndCheckout extends BaseClass {
         objMyAccountPage = new MyAccountPage(driver);
         objSearchResultsPage = new SearchResultsPage(driver);
         objProccedToCheckOutPage = new ProceedToCheckOutPage(driver);
+        Calculation calculation = new Calculation();
 
         objHomePage.veryHeader();
         objHomePage.clickonSignInButton();
@@ -40,10 +41,9 @@ public class AddItemsAndCheckout extends BaseClass {
         objSearchResultsPage.addtoCart();
         objProccedToCheckOutPage.clickCheckout();
 
-
         objProccedToCheckOutPage.confirmCheckoutPagePopup();
-        objProccedToCheckOutPage.productTotalValue();
-        objProccedToCheckOutPage.shippingTotal();
+
+        calculation.CalculateTotal(objProccedToCheckOutPage.productTotalValue(),objProccedToCheckOutPage.shippingTotal(),objProccedToCheckOutPage.goodsTotal());
         objProccedToCheckOutPage.goodsTotal();
 
         objProccedToCheckOutPage.clickProceedToCheckout();

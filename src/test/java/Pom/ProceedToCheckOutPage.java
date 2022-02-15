@@ -37,19 +37,25 @@ public class ProceedToCheckOutPage {
         return element;
     }
 
-    public void productTotalValue(){
+    public String productTotalValue(){
         String totalproductvalue = driver.findElement(totalForProducts).getText();
         System.out.println("Total Product value : "+totalproductvalue);
+
+        return totalproductvalue;
     }
 
-    public void shippingTotal(){
+    public String shippingTotal(){
         String TotalShippingcosts = driver.findElement(totalShipping).getText();
         System.out.println("Total Shipping value : "+TotalShippingcosts);
+
+        return TotalShippingcosts;
     }
 
-    public void goodsTotal(){
+    public String goodsTotal(){
         String totalForGoods = driver.findElement(total).getText();
         System.out.println("Total for goods : "+totalForGoods);
+
+        return totalForGoods;
     }
 
     public void clickCheckout(){
