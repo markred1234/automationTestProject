@@ -1,0 +1,14 @@
+BaseClass\UIMap.class
+Tests\SignInToAccount.class
+Pom\ProceedToCheckOutPage.class
+Pom\HomePage.class
+BaseClass\Calculation.class
+Tests\SearchForItem.class
+Pom\SearchResultsPage.class
+Tests\SearchForItemsDataDriven.class
+Pom\SignInPage.class
+Tests\SearchForItems.class
+BaseClass\BaseClass.class
+Tests\AddItemsAndCheckout.class
+BaseClass\DataDriven.class
+Pom\MyAccountPage.class
