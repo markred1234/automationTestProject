@@ -32,6 +32,7 @@ public class MyAccountPage {
     }
 
     public void verifymyAccount() {
+        waitMethod(myAccount);
         assertEquals("MY ACCOUNT", driver.findElement(myAccount).getText().trim(), "Could not text");
     }
 

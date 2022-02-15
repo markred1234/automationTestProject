@@ -3,6 +3,7 @@
 <suite name="Online Shopping Test Suite">
 
     <parameter name="appurl" value="http://automationpractice.com/index.php"/>
+<!--    set headless to true if headless is required-->
     <parameter name="isHeadless" value="false"/>
 
 

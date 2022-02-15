@@ -29,7 +29,6 @@ public class BaseClass {
         password = datafile.getData("password");
         item = datafile.getData("itemstoAdd");
 
-        System.out.println("Product Quantity "+ productQuantity);
 
         //Chrome Options
 
@@ -52,7 +51,6 @@ public class BaseClass {
 
         appurl = _appurl;
         driver.navigate().to(appurl);
-
 
     }
 

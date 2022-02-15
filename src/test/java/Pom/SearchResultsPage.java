@@ -35,25 +35,29 @@ public class SearchResultsPage {
     }
 
     public void searchResults(String searchfor) {
+        waitMethod(searchResults);
         assertEquals(searchfor, driver.findElement(searchResults).getText().trim(), "Could not search criteria");
     }
 
     public void itemsWanted(String quantity){
+        waitMethod(itemwanted);
         driver.findElement(itemwanted).clear();
         driver.findElement(itemwanted).sendKeys(quantity);
     }
 
     public void itemClick() {
-
+        waitMethod(searchResults);
         driver.findElement(searchResults).click();
 
     }
 
     public void addtoCart() {
+        waitMethod(addtoCartButton);
         driver.findElement(addtoCartButton).click();
     }
 
     public String oneItemPrice(){
+        waitMethod(itemPrice);
         String priceOfOneItem = driver.findElement(itemPrice).getText();
         System.out.println("Total Product value : "+priceOfOneItem);
         return priceOfOneItem;

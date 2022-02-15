@@ -39,6 +39,7 @@ public class ProceedToCheckOutPage {
     }
 
     public String productTotalValue(){
+        waitMethod(totalForProducts);
         String totalproductvalue = driver.findElement(totalForProducts).getText();
         System.out.println("Total Product value : "+totalproductvalue);
 
@@ -53,6 +54,7 @@ public class ProceedToCheckOutPage {
     }
 
     public String goodsTotal(){
+        waitMethod(total);
         String totalForGoods = driver.findElement(total).getText();
         System.out.println("Total for goods : "+totalForGoods);
 
@@ -77,7 +79,7 @@ public class ProceedToCheckOutPage {
 
     public void confirmCheckOutPage() {
         waitMethod(cartDetail);
-        assertEquals("01. Summary", driver.findElement(cartDetail).getText().trim(),"Could not find text");
+        assertEquals(driver.findElement(cartDetail).getText().trim(),"01. Summary","Could not find text");
     }
 
 }

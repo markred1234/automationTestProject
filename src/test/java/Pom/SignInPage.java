@@ -32,6 +32,7 @@ public class SignInPage {
 
 
     public void authUsernamePassword(String Username, String Password) {
+        waitMethod(userName);
         driver.findElement(userName).sendKeys(Username);
         driver.findElement(password).sendKeys(Password);
     }

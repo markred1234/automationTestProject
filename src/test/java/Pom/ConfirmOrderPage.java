@@ -37,12 +37,14 @@ public class ConfirmOrderPage {
     }
 
     public String totalShippingPrice() {
+        waitMethod(totalShipping);
         String priceOfShipping = driver.findElement(totalShipping).getText();
         System.out.println("Total shipping value : " + priceOfShipping);
         return priceOfShipping;
     }
 
     public String priceofProduct() {
+        waitMethod(priceOfOneProduct);
         String priceOfProduct = driver.findElement(priceOfOneProduct).getText();
         System.out.println("Total Product value : " + priceOfProduct);
         return priceOfProduct;

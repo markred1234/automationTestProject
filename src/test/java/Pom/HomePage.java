@@ -40,19 +40,24 @@ public class HomePage {
     }
 
     public void clickOnSearchBox() {
+        waitMethod(searchBox);
         driver.findElement(searchBox).clear();
         driver.findElement(searchBox).click();
     }
 
     public void  clickonSignInButton(){
+        waitMethod(signInButton);
         driver.findElement(signInButton).click();
     }
 
     public void searchOnSearchBox(String Search) {
+        waitMethod(searchBox);
         driver.findElement(searchBox).sendKeys(Search);
     }
 
     public void clickOnSearchButton() {
+        waitMethod(searchButton);
+
         driver.findElement(searchButton).click();
     }
 
