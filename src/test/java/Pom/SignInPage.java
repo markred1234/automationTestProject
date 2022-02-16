@@ -33,7 +33,7 @@ public class SignInPage {
 
 
     public void authUsernamePassword(String Username, String Password) {
-        ReporterOutput.ReporterLog("Entering username " +userName + " password "+ password);
+        ReporterOutput.ReporterLog("Entering username " +Username + " password "+ Password);
         waitMethod(userName);
         driver.findElement(userName).sendKeys(Username);
         driver.findElement(password).sendKeys(Password);
