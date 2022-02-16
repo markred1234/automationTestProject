@@ -5,3 +5,4 @@
 3). Tests located in Tests Directory and contains tests as per assesment.
 4). Excel file located in Root under excel directory
 5). To execute run testngTestSuite.xml
+6). Some default reporting is available under test-output
