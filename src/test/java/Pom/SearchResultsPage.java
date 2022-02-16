@@ -18,7 +18,6 @@ public class SearchResultsPage {
     WebDriver driver;
     By searchResults = By.xpath("/html/body/div[1]/div[2]/div/div[3]/div[2]/ul/li/div/div[2]/h5/a");
     By addtoCartButton = By.xpath("/html/body/div[1]/div[2]/div/div[3]/div/div/div/div[4]/form/div/div[3]/div[1]/p/button/span");
-    By itemwanted = By.xpath("//*[@id=\"quantity_wanted\"]");
     By itemPrice = By.xpath("//*[@id=\"our_price_display\"]");
 
     public WebElement waitMethod(By Xpath)
@@ -39,11 +38,7 @@ public class SearchResultsPage {
         assertEquals(searchfor, driver.findElement(searchResults).getText().trim(), "Could not search criteria");
     }
 
-    public void itemsWanted(String quantity){
-        waitMethod(itemwanted);
-        driver.findElement(itemwanted).clear();
-        driver.findElement(itemwanted).sendKeys(quantity);
-    }
+
 
     public void itemClick() {
         waitMethod(searchResults);

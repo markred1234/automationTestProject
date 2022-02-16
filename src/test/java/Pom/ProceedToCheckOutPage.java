@@ -19,10 +19,8 @@ public class ProceedToCheckOutPage {
     By proccedToCheckout = By.xpath("/html/body/div/div[1]/header/div[3]/div/div/div[4]/div[1]/div[2]/div[4]/a/span");
     By cartDetail = By.xpath("/html/body/div/div[2]/div/div[3]/div/ul/li[1]/span");
     By checkoutPageConfirmation = By.xpath("/html/body/div/div[1]/header/div[3]/div/div/div[4]/div[1]/div[1]/h2");
-    By totalForProducts = By.xpath("/html/body/div/div[1]/header/div[3]/div/div/div[4]/div[1]/div[2]/div[1]/span");
     By totalShipping = By.xpath("/html/body/div/div[1]/header/div[3]/div/div/div[4]/div[1]/div[2]/div[2]/span");
     By total = By.xpath("/html/body/div/div[1]/header/div[3]/div/div/div[4]/div[1]/div[2]/div[3]/span");
-
 
 
     public ProceedToCheckOutPage(WebDriver driver) {
@@ -38,13 +36,6 @@ public class ProceedToCheckOutPage {
         return element;
     }
 
-    public String productTotalValue(){
-        waitMethod(totalForProducts);
-        String totalproductvalue = driver.findElement(totalForProducts).getText();
-        System.out.println("Total Product value : "+totalproductvalue);
-
-        return totalproductvalue;
-    }
 
     public String shippingTotal(){
         String TotalShippingcosts = driver.findElement(totalShipping).getText();

@@ -16,6 +16,9 @@ public class BaseClass {
     public String password;
     public String item;
     public String productQuantity;
+    public String category;
+    public String subcategory;
+    public String allCategories;
 
     @BeforeTest(alwaysRun = true)
     @Parameters({"appurl","isHeadless"})
@@ -28,6 +31,9 @@ public class BaseClass {
         userName = datafile.getData("userName");
         password = datafile.getData("password");
         item = datafile.getData("itemstoAdd");
+        category = datafile.getData("category");
+        subcategory = datafile.getData("subcategory");
+        allCategories = datafile.getData("allcategories");
 
 
         //Chrome Options
