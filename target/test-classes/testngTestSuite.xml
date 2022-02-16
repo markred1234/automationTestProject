@@ -3,8 +3,13 @@
 <suite name="Online Shopping Test Suite">
 
     <parameter name="appurl" value="http://automationpractice.com/index.php"/>
-<!--    set headless to true if headless is required-->
+    <!--    set headless to true if headless is required-->
     <parameter name="isHeadless" value="false"/>
+
+
+    <listeners>
+        <listener class-name="org.uncommons.reportng.HTMLReporter"/>
+    </listeners>
 
 
     <test name="Search For Item - Test Case 1">
@@ -43,7 +48,6 @@
             <class name="Tests.Navigation"/>
         </classes>
     </test> <!-- Test -->
-
 
 
 </suite> <!-- Suite -->

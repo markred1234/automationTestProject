@@ -1,5 +1,6 @@
 package Pom;
 
+import BaseClass.ReporterOutput;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -34,6 +35,7 @@ public class AddtoCartPage {
     }
 
     public void itemsWanted(String quantity){
+        ReporterOutput.ReporterLog("Adding in quantity items = " +quantity);
         waitMethod(itemwanted);
         driver.findElement(itemwanted).clear();
         driver.findElement(itemwanted).sendKeys(quantity);
@@ -46,7 +48,7 @@ public class AddtoCartPage {
     public String oneItemPrice(){
         waitMethod(itemPrice);
         String priceOfOneItem = driver.findElement(itemPrice).getText();
-        System.out.println("Total Product value : "+priceOfOneItem);
+        ReporterOutput.ReporterLog("Total Product value : "+priceOfOneItem);
         return priceOfOneItem;
     }
 

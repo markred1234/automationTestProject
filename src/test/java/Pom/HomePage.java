@@ -1,5 +1,7 @@
 package Pom;
 import static org.testng.Assert.assertEquals;
+
+import BaseClass.ReporterOutput;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -40,24 +42,27 @@ public class HomePage {
     }
 
     public void clickOnSearchBox() {
+        ReporterOutput.ReporterLog("Clicking search for product box");
         waitMethod(searchBox);
         driver.findElement(searchBox).clear();
         driver.findElement(searchBox).click();
     }
 
     public void  clickonSignInButton(){
+        ReporterOutput.ReporterLog("Clicking sign in button");
         waitMethod(signInButton);
         driver.findElement(signInButton).click();
     }
 
     public void searchOnSearchBox(String Search) {
+        ReporterOutput.ReporterLog("Entering Product search text");
         waitMethod(searchBox);
         driver.findElement(searchBox).sendKeys(Search);
     }
 
     public void clickOnSearchButton() {
+        ReporterOutput.ReporterLog("Clicking on search button");
         waitMethod(searchButton);
-
         driver.findElement(searchButton).click();
     }
 

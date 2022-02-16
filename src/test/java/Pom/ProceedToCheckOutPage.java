@@ -1,5 +1,6 @@
 package Pom;
 
+import BaseClass.ReporterOutput;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -38,16 +39,18 @@ public class ProceedToCheckOutPage {
 
 
     public String shippingTotal(){
+        ReporterOutput.ReporterLog("Getting total shipping cost on checkout screen");
         String TotalShippingcosts = driver.findElement(totalShipping).getText();
-        System.out.println("Total Shipping value : "+TotalShippingcosts);
+        ReporterOutput.ReporterLog("Total Shipping value : "+TotalShippingcosts);
 
         return TotalShippingcosts;
     }
 
     public String goodsTotal(){
+        ReporterOutput.ReporterLog("Getting goods total cost on checkout screen");
         waitMethod(total);
         String totalForGoods = driver.findElement(total).getText();
-        System.out.println("Total for goods : "+totalForGoods);
+        ReporterOutput.ReporterLog("Total for goods : "+totalForGoods);
 
         return totalForGoods;
     }
@@ -59,11 +62,15 @@ public class ProceedToCheckOutPage {
     }
 
     public void clickProceedToCheckout(){
+        ReporterOutput.ReporterLog("Clicking on procceed to checkout");
+
         waitMethod(proccedToCheckout);
         driver.findElement(proccedToCheckout).click();
     }
 
     public void confirmCheckoutPagePopup() {
+        ReporterOutput.ReporterLog("Confirming checkout popup");
+
         waitMethod(checkoutPageConfirmation);
         assertEquals(driver.findElement(checkoutPageConfirmation).getText().trim(),"Product successfully added to your shopping cart","Could not find text");
     }

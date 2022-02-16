@@ -45,14 +45,13 @@ public class BaseClass {
         }
 
         options.addArguments("--start-maximized");
-        System.out.println("Operating System:" + System.getProperty("os.name"));
+        ReporterOutput.ReporterLog("Operating System:" + System.getProperty("os.name"));
         System.setProperty("webdriver.chrome.driver", "WebDrivers/chromedriver.exe");
-        System.out.println("******************************************");
-        System.out.println("Launching Chrome browser");
+        ReporterOutput.ReporterLog("Launching Chrome browser");
         try {
             driver = new ChromeDriver(options);
         } catch (Exception e) {
-            System.out.println(e.getMessage());
+            ReporterOutput.ReporterLog(e.getMessage());
         }
 
         appurl = _appurl;

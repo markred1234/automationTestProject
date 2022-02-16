@@ -1,5 +1,6 @@
 package Pom;
 
+import BaseClass.ReporterOutput;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -30,23 +31,26 @@ public class ConfirmOrderPage {
     }
 
     public String totalOrderPrice() {
+        ReporterOutput.ReporterLog("Getting Total Order Price");
         waitMethod(totalPrice);
         String priceOfOneItem = driver.findElement(totalPrice).getText();
-        System.out.println("Total order value : " + priceOfOneItem);
+        ReporterOutput.ReporterLog("Total order value : " + priceOfOneItem);
         return priceOfOneItem;
     }
 
     public String totalShippingPrice() {
+        ReporterOutput.ReporterLog("Getting total shipping price");
         waitMethod(totalShipping);
         String priceOfShipping = driver.findElement(totalShipping).getText();
-        System.out.println("Total shipping value : " + priceOfShipping);
+        ReporterOutput.ReporterLog("Total shipping value : " + priceOfShipping);
         return priceOfShipping;
     }
 
     public String priceofProduct() {
+        ReporterOutput.ReporterLog("Getting price of one product");
         waitMethod(priceOfOneProduct);
         String priceOfProduct = driver.findElement(priceOfOneProduct).getText();
-        System.out.println("Total Product value : " + priceOfProduct);
+        ReporterOutput.ReporterLog("Total Product value : " + priceOfProduct);
         return priceOfProduct;
     }
 

@@ -1,5 +1,6 @@
 package Pom;
 
+import BaseClass.ReporterOutput;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -32,12 +33,14 @@ public class SignInPage {
 
 
     public void authUsernamePassword(String Username, String Password) {
+        ReporterOutput.ReporterLog("Entering username " +userName + " password "+ password);
         waitMethod(userName);
         driver.findElement(userName).sendKeys(Username);
         driver.findElement(password).sendKeys(Password);
     }
 
     public void clickOnSignInButton() {
+        ReporterOutput.ReporterLog("Clicking on sign in button");
         driver.findElement(signInButton).click();
     }
 
